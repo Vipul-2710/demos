@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+  </head>
+  <body>
+    <h1>Welcome to the Home Page</h1>
+    <p>This is a simple Django application.</p>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Add Student</button>
+    </form>
+      <p>ai output : {{ ai_output }}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Student Age</th>
+          <th>Student Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+        <tr>
+          <td>{{ student.name }}</td>
+          <td>{{ student.age }}</td>
+          <td>{{ student.grade }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
