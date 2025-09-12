@@ -27,4 +27,8 @@ def home(request):
             return render(request, 'home.html', {'students': students , 'form': form, 'ai_output' : ai_output})
     else:
         form = StudentForm()
-    return render(request, 'home.html', {'students': students , 'form': form, 'ai_output' : ""}) 
+    return render(request, 'home.html', {'students': students , 'form': form, 'ai_output' : ""})
+
+def about(request):
+    print(dir(request))   
+    return HttpResponse('<h1 style="color:pink; background-color:aqua">this is about page</h1>')
