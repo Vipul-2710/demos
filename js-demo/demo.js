@@ -1,3 +1,11 @@
+<h1>2+2</h1>
+<h2 id="h2"></h2>
+<script>
+  document.getElementById("h2").innerHTML = 2 + 2;
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+  }
+</script>
 /************************************
  * JavaScript Complete Concepts File
  * Covers Variables, Operators,
